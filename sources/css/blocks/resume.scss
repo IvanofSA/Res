@@ -11,7 +11,7 @@
   }
   &__header {
     background: $headerBg;
-    padding: 15px 20px;
+    padding: 15px;
   }
   &__diagram {
     display: flex;
@@ -20,9 +20,9 @@
     align-items: center;
   }
 
-
   & .diagram-line {
     width: 100%;
+    margin-bottom: 35px;
 
     &__item {
       margin-bottom: 15px;
@@ -32,7 +32,7 @@
       }
 
       &:nth-child(1) {
-        & .diagram-line__item_wrap {
+        & .diagram-line__item_occupancy {
           background: #f37576;
           width: 90%;
           //animation: loader 2s ease-in-out 1s;
@@ -41,21 +41,21 @@
       }
 
       &:nth-child(2) {
-        & .diagram-line__item_wrap {
+        & .diagram-line__item_occupancy {
           background: #4db07a;
           width: 20%;
         }
       }
 
       &:nth-child(3) {
-        & .diagram-line__item_wrap {
+        & .diagram-line__item_occupancy {
           background: #eac85d;
           width: 60%;
         }
       }
 
       &:nth-child(4) {
-        & .diagram-line__item_wrap {
+        & .diagram-line__item_occupancy {
           background: #5d9bd6;
           width: 30%;
         }
@@ -72,10 +72,23 @@
 
       &_wrap {
         position: relative;
-        //width: 100%;
-        width: 0;
+        width: 100%;
+        //width: 0;
+        background: #eaeaea;
         height: 32px;
         border-radius: 5px;
+        overflow: hidden;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+      }
+
+      &_occupancy {
+        position: relative;
+        z-index: 20;
+        @include stagger-anim-delay(10, 0.2s);
+        animation: 1s animation-lightspeed-in ease forwards;
+        width: 0;
+        height: 32px;
         overflow: hidden;
       }
 
@@ -90,13 +103,159 @@
       }
     }
   }
+
+  & .diagram_circle {
+    width: 100%;
+
+    &__list {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__item {
+      position: relative;
+      width: 70px;
+      height: 68px;
+      background: #eaeaea;
+      display: flex;
+      flex-flow: wrap column;
+      align-items: center;
+      justify-content: center;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        top: -4px;
+      }
+
+      &:nth-child(1) {
+        &:before {
+          background: #ffce29;
+        }
+      }
+
+      &:nth-child(2) {
+        &:before {
+          background: #ea6a45;
+        }
+      }
+
+      &:nth-child(3) {
+        &:before {
+          background: #5d9bd6;
+        }
+      }
+    }
+
+    &__desc {
+      font-family: 'helveticaneue', Arial, Helvetica, sans-serif;
+      font-weight: 400;
+      @include pxToRem(font-size, 13px);
+      color: $titleColor;
+    }
+
+    &__procent {
+      text-transform: uppercase;
+      font-weight: 700;
+      @include pxToRem(font-size, 22px);
+      color: $titleColor;
+    }
+  }
+
+
+  &__experience {
+    padding: 20px 15px;
+  }
+  &__experience_title {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  & .experience-item {
+    @include pxToRem(font-size, 14px);
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    &__workplace {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 40px;
+
+      &:after, &:before {
+        content: '';
+        display: block;
+        position: absolute;
+
+      }
+      
+      &:before {
+        width: 100%;
+        bottom: -20px;
+        left: 0;
+        height: 2px;
+        background: $arrowGreen;
+      }
+
+      &:after {
+        left: 50%;
+        bottom: -32px;
+        @include transform(translateX(-50%));
+        background: transparent;
+        border: 7px solid transparent;
+        border-top: 7px solid $arrowGreen;
+      }
+
+    }
+
+    &__workplace_text {
+      display: block;
+      font-weight: 400;
+      color: $textColor;
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__workplace_accent{
+      display: block;
+      font-weight: 700;
+      color: $hoverORange;
+      margin-bottom: 5px;
+    }
+
+    &__desc {
+      font-weight: 400;
+      color: $textColor;
+      line-height: 1.714;
+    }
+  }
 }
 
-//@keyframes loader {
-//  0% {
-//    width: 0;
-//  }
-//  100%{
-//    width: 90%;
-//  }
-//}
+
+#chart-area {
+  width: 100%!important;
+  min-height: 300px!important;
+  margin-bottom: 30px;
+}
+
+
+@keyframes animation-lightspeed-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

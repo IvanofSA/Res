@@ -494,3 +494,12 @@ $hfs: 14; // 100% font-size
 	#{$property}: $pxValues;
 }
 
+@mixin stagger-anim-delay($i, $stagger-delay) {
+	@while $i > 0 {
+		&:nth-of-type(#{$i}) {
+			animation-delay: $stagger-delay * $i;
+		}
+
+		$i: $i - 1;
+	}
+}
