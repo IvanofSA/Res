@@ -1,0 +1,21 @@
+{
+  "name": "P",
+  "description": "P by Si",
+  "main": "gulpfile.js",
+  "authors": [
+    "Pshlt"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "breakpoint": "^4.6.4",
+    "singularity": "^1.8.0"
+  }
+}

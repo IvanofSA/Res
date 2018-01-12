@@ -1,0 +1,35 @@
+
+.title {
+  width: 100%;
+  padding: 15px 0;
+  margin-bottom: 30px;
+  text-align: center;
+
+  h1 {
+    font-family: 'gloria', Arial, sans-serif;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+    color: $white;
+    @include pxToRem(font-size, 28px);
+  }
+
+}
+
+.main-title {
+  text-align: center;
+  color: $textColor;
+  font-family: 'helveticaneue', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  @include pxToRem(font-size, 27px);
+}
+
+.main-desc {
+  font-family: 'helveticaneue', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+  color: $textColor;
+  @include pxToRem(font-size, 16px);
+}
+
+.hide {
+  display: none;
+}

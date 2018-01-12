@@ -1,0 +1,16 @@
+extends layout/template
+
+block vars
+	- var pageTemplate = "index"; // page-specific var
+
+block title
+	title Main page
+
+block content
+	.title
+		h1 My Hello world
+
+	include layout/block/navigation
+	include layout/block/profile
+	include layout/block/resume
+	include layout/block/footer

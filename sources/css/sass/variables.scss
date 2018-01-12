@@ -1,0 +1,24 @@
+// color text
+$white: #fff;
+$titleColor: #626262;
+$textColor: #808181;
+$grayColor: #b3b3b3;
+
+// hover
+  $hoverORange: #ea6a45;
+
+// burger menu
+$size: 50px;
+$height: 20px;
+$width: 30px;
+$line-size: 3px;
+$line-color: #626262;
+$line-radius: $line-size;
+$to-translate: ($height - $line-size) / 2;
+$bounce: cubic-bezier(.87, -.50, .19, 1.50);
+
+//footer bg
+$footerBg: #ebebeb;
+
+//header bg
+$headerBg: #626262;
