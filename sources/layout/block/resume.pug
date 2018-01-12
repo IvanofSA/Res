@@ -1,68 +1,90 @@
 section.resume
-    .resume__header
-        h2.resume__title My skills
-    .resume__diagram
-        .resume__diagram_line.diagram-line
-            .diagram-line__item
-                span.diagram-line__item_title Worldpress
-                .diagram-line__item_wrap
-                    .diagram-line__item_occupancy
-                        spam.diagram-line__item_procent 90%
-            .diagram-line__item
-                span.diagram-line__item_title Worldpress2
-                .diagram-line__item_wrap
-                    .diagram-line__item_occupancy
-                        spam.diagram-line__item_procent 20%
-            .diagram-line__item
-                span.diagram-line__item_title Worldpress3
-                .diagram-line__item_wrap
-                    .diagram-line__item_occupancy
-                        spam.diagram-line__item_procent 60%
-            .diagram-line__item
-                span.diagram-line__item_title Worldpress4
-                .diagram-line__item_wrap
-                    .diagram-line__item_occupancy
-                        spam.diagram-line__item_procent 30%
 
+    .resume__header.header
+        h2.header__title My skills
+    .resume__container.container
+        .resume__wrap
+            .resume__diagram.resume__diagram_line.diagram-line
+                .diagram-line__item
+                    span.diagram-line__item_title Worldpress
+                    .diagram-line__item_wrap
+                        .diagram-line__item_occupancy
+                            spam.diagram-line__item_procent 90%
+                .diagram-line__item
+                    span.diagram-line__item_title Worldpress2
+                    .diagram-line__item_wrap
+                        .diagram-line__item_occupancy
+                            spam.diagram-line__item_procent 20%
+                .diagram-line__item
+                    span.diagram-line__item_title Worldpress3
+                    .diagram-line__item_wrap
+                        .diagram-line__item_occupancy
+                            spam.diagram-line__item_procent 60%
+                .diagram-line__item
+                    span.diagram-line__item_title Worldpress4
+                    .diagram-line__item_wrap
+                        .diagram-line__item_occupancy
+                            spam.diagram-line__item_procent 30%
 
-        .resume__diagram_circle.diagram_circle
-            canvas#chart-area
-            .diagram_circle__list
-                .diagram_circle__item
-                    span.diagram_circle__desc HTML
-                    span.diagram_circle__procent 50%
-                .diagram_circle__item
-                    span.diagram_circle__desc CSS
-                    span.diagram_circle__procent 20%
-                .diagram_circle__item
-                    span.diagram_circle__desc JavaScript
-                    span.diagram_circle__procent 30%
-    .resume__experience
-        h3.resume__experience_title.main-title Work Experience
-        .resume__experience_list
-            .resume__experience_item.experience-item
-                .experience-item__workplace
-                    span.experience-item__workplace_accent Senior Icon Designer
-                    span.experience-item__workplace_text Example web agency
-                    span.experience-item__workplace_text Period: may 20011-jun 2012
-                p.experience-item__desc Your talent me lius quod i legu saepius. Claritas est etiam processus dynamicus, qui sequr mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram.
-            .resume__experience_item.experience-item
-                .experience-item__workplace
-                    span.experience-item__workplace_accent Senior Icon Designer
-                    span.experience-item__workplace_text Example web agency
-                    span.experience-item__workplace_text Period: may 20011-jun 2012
-                p.experience-item__desc Your talent me lius quod i legu saepius. Claritas est etiam processus dynamicus, qui sequr mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram.
-            .resume__experience_item.experience-item
-                .experience-item__workplace
-                    span.experience-item__workplace_accent Senior Icon Designer
-                    span.experience-item__workplace_text Example web agency
-                    span.experience-item__workplace_text Period: may 20011-jun 2012
-                p.experience-item__desc Your talent me lius quod i legu saepius. Claritas est etiam processus dynamicus, qui sequr mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram.
-            .resume__experience_item.experience-item
-                .experience-item__workplace
-                    span.experience-item__workplace_accent Senior Icon Designer
-                    span.experience-item__workplace_text Example web agency
-                    span.experience-item__workplace_text Period: may 20011-jun 2012
-                p.experience-item__desc Your talent me lius quod i legu saepius. Claritas est etiam processus dynamicus, qui sequr mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram.
-    .resume__freelance
-        .resume__freelance_title
+            .resume__diagram.resume__diagram_circle.diagram-circle
+                canvas#chart-area
+                .diagram-circle__list
+                    .diagram-circle__item
+                        span.diagram-circle__desc HTML
+                        span.diagram-circle__procent 50%
+                    .diagram-circle__item
+                        span.diagram-circle__desc CSS
+                        span.diagram-circle__procent 20%
+                    .diagram-circle__item
+                        span.diagram-circle__desc JavaScript
+                        span.diagram-circle__procent 30%
+
+        .resume__experience.experience
+            h3.resume__title.main-title Work Experience
+            .experience__list
+                .experience__item.workplace
+                    .workplace__info
+                        span.workplace__text.workplace__text_accent Senior Icon Designer
+                        span.workplace__text Example web agency
+                        span.workplace__text Period: may 20011-jun 2012
+                    p.workplace__desc Your talent me lius quod i legu saepius. Claritas est etiam processus dynamicus, qui sequr mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram.
+                .experience__item.workplace
+                    .workplace__info
+                        span.workplace__text.workplace__text_accent Senior Icon Designer
+                        span.workplace__text Example web agency
+                        span.workplace__text Period: may 20011-jun 2012
+                    p.workplace__desc Your talent me lius quod i legu saepius. Claritas est etiam processus dynamicus, qui sequr mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram.
+                .experience__item.workplace
+                    .workplace__info
+                        span.workplace__text.workplace__text_accent Senior Icon Designer
+                        span.workplace__text Example web agency
+                        span.workplace__text Period: may 20011-jun 2012
+                    p.workplace__desc Your talent me lius quod i legu saepius. Claritas est etiam processus dynamicus, qui sequr mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram.
+                .experience__item.workplace
+                    .workplace__info
+                        span.workplace__text.workplace__text_accent Senior Icon Designer
+                        span.workplace__text Example web agency
+                        span.workplace__text Period: may 20011-jun 2012
+                    p.workplace__desc Your talent me lius quod i legu saepius. Claritas est etiam processus dynamicus, qui sequr mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram.
+        .resume__freelance.freelance
+            .resume__title.main-title Freelance Pricing Table
+            .freelance__list
+                .freelance__item.price
+                    .price__title Economy
+                    .price__title.price__title_num $ 200,
+                        sup 00
+                    .price__list
+                        .price__item
+                            span 10 Cups of Coffee
+                        .price__item
+                            span 10 Cups of Coffee
+                        .price__item
+                            span 10 Cups of Coffee
+                        .price__item
+                            span 10 Cups of Coffee
+                        .price__item
+                            span 10 Cups of Coffee
+                        .price__item
+                            span 10 Cups of Coffee
+                        .price__item
+                            .price__btn.price__btn_green Submit

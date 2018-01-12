@@ -30,6 +30,22 @@
   @include pxToRem(font-size, 16px);
 }
 
+.header {
+  background: $headerBg;
+  padding: 15px;
+
+  &__title {
+    font-family: 'helveticaneue', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    @include pxToRem(font-size, 27px);
+    color: $white;
+  }
+}
+
+.container {
+  padding: 20px 15px;
+}
+
 .hide {
   display: none;
 }
