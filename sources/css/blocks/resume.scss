@@ -19,7 +19,7 @@
   }
   &__title {
     text-align: left;
-    margin-bottom: $titleMb;
+    margin-bottom: 35px;
   }
 
 }
@@ -114,7 +114,7 @@
 
   &__item {
     position: relative;
-    width: 80px;
+    width: 30%;
     height: 68px;
     background: #eaeaea;
     display: flex;
@@ -180,29 +180,7 @@
     position: relative;
     margin-bottom: 40px;
 
-    &:after, &:before {
-      content: '';
-      display: block;
-      position: absolute;
 
-    }
-
-    &:before {
-      width: 100%;
-      bottom: -20px;
-      left: 0;
-      height: 2px;
-      background: $arrowGreen;
-    }
-
-    &:after {
-      left: 50%;
-      bottom: -32px;
-      @include transform(translateX(-50%));
-      background: transparent;
-      border: 7px solid transparent;
-      border-top: 7px solid $arrowGreen;
-    }
 
   }
 
@@ -222,16 +200,102 @@
   }
 
   &__desc {
+    position: relative;
     font-weight: 400;
     color: $textColor;
     line-height: 1.714;
+
+    &:after, &:before {
+      content: '';
+      display: block;
+      position: absolute;
+
+    }
+
+    &:before {
+      width: 100%;
+      bottom: -20px;
+      left: 0;
+      height: 2px;
+      background: $arrowGreen;
+    }
+
+    &:after {
+      left: 50%;
+      bottom: -20px;
+      @include transform(translateX(-50%));
+      background: transparent;
+      border: 7px solid transparent;
+      border-bottom: 7px solid $arrowGreen;
+    }
   }
 }
 
 .freelance {
+  text-align: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    justify-content: space-between;
+  }
+  &__item {
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.price {
+  border-radius: 5px;
+  border: 1px solid #cdcdcd;
+  text-align: center;
+  overflow: hidden;
+  display: block;
+  max-width: 320px;
+  width: 100%;
+
+  &__wrap {
+    background: $footerBg;
+    padding: 15px 0;
+  }
+
+  &__title {
+    display: block;
+    font-weight: 700;
+    color: $titleColor;
+    @include pxToRem(font-size, 27px);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+    //line-height: 1.85;
+  }
+
+
+  &__title_num {
+    font-weight: 400;
+    @include pxToRem(font-size, 23px);
+    sup {
+      @include pxToRem(font-size, 12px);
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  &__item {
+    padding: 15px 0;
+    color: $textColor;
+    @include pxToRem(font-size, 18px);
+    font-weight: 500;
+    border-bottom: 1px solid rgba(234, 106, 69, 0.2);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+
 
 }
-
 
 #chart-area {
   width: 100%!important;

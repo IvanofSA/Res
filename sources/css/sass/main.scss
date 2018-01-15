@@ -46,6 +46,86 @@
   padding: 20px 15px;
 }
 
+.btn {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  width: 150px;
+  height: 48px;
+  line-height: 48px;
+  margin: 0 auto;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #cdcdcd;
+  @include pxToRem(font-size, 19px);
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $white;
+  text-shadow: none;
+
+
+
+  &_green {
+    background: -moz-linear-gradient(90deg, rgb(61, 157, 107) 0%, rgb(81, 164, 122) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(61, 157, 107) 0%, rgb(81, 164, 122) 100%);
+    background: -ms-linear-gradient(90deg, rgb(61, 157, 107) 0%, rgb(81, 164, 122) 100%);
+    border: 1px solid rgba(59, 151, 103, 1);
+  }
+
+  &_red {
+    background: -moz-linear-gradient(90deg, rgb(228,94,57) 0%, rgb(232,103,64) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(228,94,57) 0%, rgb(232,103,64) 100%);
+    background: -ms-linear-gradient(90deg, rgb(228,94,57) 0%, rgb(232,103,64) 100%);
+    border: 1px solid rgb(228, 89, 54);
+  }
+
+  &_blue {
+    background: -moz-linear-gradient(90deg, rgb(76,129,163) 0%, rgb(95,144,176) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(76,129,163) 0%, rgb(95,144,176) 100%);
+    background: -ms-linear-gradient(90deg, rgb(76,129,163) 0%, rgb(95,144,176) 100%);
+    border: 1px solid rgb(48, 115, 163);
+  }
+
+  &:hover {
+    animation-name: wobble-horizontal;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+  }
+
+  &:focus, &:active {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.4);
+  }
+}
+
 .hide {
   display: none;
+}
+
+@keyframes wobble-horizontal {
+  16.65% {
+    transform: translateX(8px);
+  }
+
+  33.3% {
+    transform: translateX(-6px);
+  }
+
+  49.95% {
+    transform: translateX(4px);
+  }
+
+  66.6% {
+    transform: translateX(-2px);
+  }
+
+  83.25% {
+    transform: translateX(1px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
