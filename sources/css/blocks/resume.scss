@@ -1,7 +1,4 @@
 .resume {
-  border-radius: 5px;
-  overflow: hidden;
-  background: $white;
 
   &__wrap {
     display: flex;
@@ -63,7 +60,7 @@
 
     &_title {
       display: inline-block;
-      font-family: 'helveticaneue', Arial, Helvetica, sans-serif;
+      //font-family: 'helveticaneue', Arial, Helvetica, sans-serif;
       font-weight: 700;
       @include pxToRem(font-size, 15px);
       color: $titleColor;

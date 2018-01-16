@@ -1,0 +1,224 @@
+.works {
+  &__filter {
+    margin-bottom: 30px;
+  }
+
+  &__preview {
+  }
+}
+
+.filter {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #cdcdcd;
+  padding: 15px 10px;
+
+  &__title {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-weight: 700;
+    @include pxToRem(font-size, 22px);
+    color: $titleColor;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    //align-items: center;
+    //width: 80%;
+  }
+
+  &__item {
+    text-align: center;
+    width: 110px;
+    margin: 0 0 10px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-weight: 500;
+    @include pxToRem(font-size, 14px);
+    text-transform: none;
+  }
+}
+
+.preview {
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+  }
+
+  &__item {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 125px;
+    height: 125px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+    background: $itemColor;
+    margin-bottom: 15px;
+    transition: all .7s ease;
+
+    &:before, &:after {
+      display: block;
+      position: absolute;
+      background: rgb(61, 157, 107);
+      content: '';
+      width: 100%;
+      height: 50%;
+      left: 0;
+      z-index: 10;
+      transition: all .7s ease;
+    }
+
+    &:before {
+      top: -70px;
+    }
+    &:after {
+      bottom: -70px;
+    }
+    &:hover {
+      //background: rgb(61, 157, 107);
+      &:before {
+        top: 0;
+      }
+      &:after {
+        bottom: 0;
+      }
+      .preview__img {
+        display: none;
+      }
+    }
+
+    &_gray {
+      &:hover {
+        background: #ccc;
+        .preview__img {
+          display: none;
+        }
+      }
+      &:before, &:after {
+        background: #ccc;
+      }
+      .preview__link {
+        background: #ccc;
+      }
+    }
+
+    &_green {
+      &:hover {
+        background: rgb(61, 157, 107);
+        .preview__img {
+          display: none;
+        }
+      }
+      &:before, &:after {
+        background: rgb(61, 157, 107);
+      }
+      .preview__link {
+        background: rgb(61, 157, 107);
+      }
+    }
+
+    &_blue {
+      &:hover {
+        background: rgb(76, 129, 163);
+        .preview__img {
+          display: none;
+        }
+      }
+      &:before, &:after {
+        background: rgb(76, 129, 163);
+      }
+      .preview__link {
+        background: rgb(76, 129, 163);
+      }
+    }
+
+    &_red {
+      &:hover {
+        background: rgb(228, 94, 57);
+        .preview__img {
+          display: none;
+        }
+      }
+      &:before, &:after {
+        background: rgb(228, 94, 57);
+      }
+      .preview__link {
+        background: rgb(228, 94, 57);
+      }
+    }
+    &_yellow {
+      &:hover {
+        background: rgb(222, 186, 74);
+        .preview__img {
+          display: none;
+        }
+      }
+      &:before, &:after {
+        background: rgb(222, 186, 74);
+      }
+
+      .preview__link {
+        background: rgb(222, 186, 74);
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    position: absolute;
+    padding: 10px 0;
+    top: 50%;
+    @include transform(translateY(-50%));
+    text-align: center;
+    text-decoration: none;
+    //transition: all .7s ease;
+    left: -260px;
+    z-index: 20;
+  }
+  &__text {
+    display: block;
+    font-weight: 700;
+    @include pxToRem(font-size, 14px);
+    text-decoration: none;
+  }
+
+  &__icon {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 0 auto 10px;
+    background: url('../img/svg/search.svg') no-repeat center;
+    background-size: contain;
+  }
+}
+

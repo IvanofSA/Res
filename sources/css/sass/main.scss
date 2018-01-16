@@ -84,8 +84,24 @@
     background: -moz-linear-gradient(90deg, rgb(76,129,163) 0%, rgb(95,144,176) 100%);
     background: -webkit-linear-gradient(90deg, rgb(76,129,163) 0%, rgb(95,144,176) 100%);
     background: -ms-linear-gradient(90deg, rgb(76,129,163) 0%, rgb(95,144,176) 100%);
-    border: 1px solid rgb(48, 115, 163);
+    border: 1px solid rgb(72, 124, 163);
   }
+
+  &_yellow {
+    background-color: rgb(222, 186, 74);
+    //box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.004),inset 0px 2px 0px 0px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgb(222, 182, 55);
+
+  }
+
+  &_gray {
+    background-color: rgb(187, 187, 187);
+    //box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.004),inset 0px 2px 0px 0px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgb(181, 181, 181);
+
+  }
+
+
 
   &:hover {
     animation-name: wobble-horizontal;
@@ -128,4 +144,10 @@
   100% {
     transform: translateX(0);
   }
+}
+
+.section-wrap {
+  border-radius: 5px;
+  overflow: hidden;
+  background: $white;
 }
