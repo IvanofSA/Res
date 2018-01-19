@@ -503,3 +503,13 @@ $hfs: 14; // 100% font-size
 		$i: $i - 1;
 	}
 }
+
+@mixin size($a, $b: false) {
+	width: $a;
+	@if $b {
+		height: $b;
+	} @else {
+		height: $a;
+	}
+}
+

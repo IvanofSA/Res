@@ -10,7 +10,10 @@ import gulpLoadPlugins from "gulp-load-plugins";
 import runSequence from "run-sequence";
 import inject from "gulp-inject";
 import fs from "fs";
-
+import svgSprite from 'gulp-svg-sprite';
+import svgmin from 'gulp-svgmin';
+import cheerio from 'gulp-cheerio';
+import replace from 'gulp-replace';
 import yargs from "yargs";
 const args = yargs.argv;
 
@@ -68,11 +71,42 @@ let jsConfig = {
 };
 
 
+
+
 // Main Tasks
 gulp.task('serve', () => runSequence('serve:clean', 'serve:start', 'indexGenerate'));
 gulp.task('dist', () => runSequence('dist:clean', 'dist:build', 'indexGenerate', () => {
 
 }));
+
+
+gulp.task('svgSpriteBuild', function () {
+    return gulp.src(SOURCES_DIR + '/img/svg/*.svg')
+        .pipe(svgmin({
+            js2svg: {
+                pretty: true
+            }
+        }))
+        .pipe(cheerio({
+            run: function ($) {
+                $('[fill]').removeAttr('fill');
+                $('[stroke]').removeAttr('stroke');
+                $('[style]').removeAttr('style');
+            },
+            parserOptions: {xmlMode: true}
+        }))
+        .pipe(replace('&gt;', '>'))
+        .pipe(svgSprite({
+            mode: {
+                symbol: {
+                    sprite: "sprite.svg"
+                }
+            }
+        }))
+        .pipe(gulp.dest('public/img/svg'));
+});
+
+
 gulp.task('auto-build', () => runSequence('dist:clean', 'dist:build'));
 gulp.task('clean', ['dist:clean, serve:clean']);
 gulp.task('open', () => open('http://localhost:' + PORT));

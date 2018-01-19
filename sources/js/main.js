@@ -1,4 +1,16 @@
 import {animateHover} from './modules/module.animate';
+import {mapInit} from './modules/module.map';
+
+const SpbCoord = {lat: 59.939095, lng: 30.315868};
+const configMapArr = {
+    zoom: 7,
+    center: SpbCoord,
+    disableDefaultUI: true,
+    styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
+
+};
+
+mapInit(configMapArr, SpbCoord);
 
 
 let menuBtn = document.querySelector('.js-menu');
@@ -33,8 +45,8 @@ const doughnutData = [
         label: "JavaScript"
     }
 ];
-let ctx = document.getElementById("chart-area").getContext("2d");
 
+let ctx = document.getElementById("chart-area").getContext("2d");
 let myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
     responsive: true,
     animation: {
@@ -46,7 +58,6 @@ let myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
 
 
 let itemWork = document.querySelectorAll('.js-animate');
-
 for (let i = 0; i < itemWork.length; i++) {
     itemWork[i].addEventListener('mouseenter', function (e) {
         e.preventDefault();
@@ -85,7 +96,6 @@ for (let i = 0; i < itemWork.length; i++) {
 
 let filterBtn = document.querySelector('.js-filter');
 let previewItems = document.querySelectorAll('.js-animate');
-
 filterBtn.addEventListener('click',  (e) => {
     e.preventDefault();
     let target = e.target;
@@ -99,60 +109,19 @@ function filterPreview(btn, arr) {
 
     let dataFilter = btn.getAttribute('data-filter');
 
-
     arr.forEach((el, i, arr) => {
 
         let itemData = el.getAttribute('data-item');
         if(dataFilter === 'all') {
-            // animateHover({
-            //     duration: 1000,
-            //     timing: function (timeFraction) {
-            //         return Math.pow(timeFraction, 2);
-            //     },
-            //     draw: function (progress) {
-            //         el.style.opacity = progress * 1 + 'px';
-            //
-            //         // el.style.width = progress * 125 + 'px';
-            //         el.style.display = 'block';
-            //
-            //     }
-            // });
+            el.style.display = 'block';
         } else {
             if(dataFilter === itemData) {
-                animateHover({
-                    duration: 1000,
-                    timing: function (timeFraction) {
-                        return Math.pow(timeFraction, 2);
-                    },
-                    draw: function (progress) {
-                        // el.style.width = progress * 125 + 'px';
-                        el.style.display = 'block';
-                        el.style.height = progress * 125 + 'px';
-                    }
-                })
-
+                el.style.display = 'block';
             } else {
-                console.log('no');
-                animateHover({
-                    duration: 1000,
-                    timing: function (timeFraction) {
-                        return Math.pow(timeFraction, 2);
-                    },
-                    draw: function (progress) {
-                        console.log(progress);
-                        if(progress <= 0.9) {
-                            el.style.height = '0px';
-                        } else {
-                            el.style.display = 'none';
-                        }
-                        // el.style.width = progress * 125 + 'px';
-                        // el.style.display = 'none';
-
-                    }
-                });
+                el.style.display = 'none';
             }
         }
 
     });
-
 }
+

@@ -1,0 +1,62 @@
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__item {
+    display: block;
+    position: relative;
+    margin-left: 5px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover {
+      .social__tooltip {
+        width: 70px;
+        opacity: 1;
+        bottom: 50px;
+      }
+    }
+  }
+
+  &__icon {
+    position: relative;
+    z-index: 15;
+    @include size(35px);
+    fill: $titleColor;
+
+    &:hover {
+      fill: $hoverORange;
+    }
+  }
+
+  &__tooltip {
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    z-index: 10;
+    bottom: 0;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    opacity: 0;
+    padding: 5px 7px;
+    background: #000;
+    color: $white;
+    @include pxToRem(font-size, 10px);
+    transition: all 1s ease-in-out;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      @include transform(translateX(-50%));
+      border: 5px solid transparent;
+      border-top: 5px solid #000;
+    }
+  }
+}

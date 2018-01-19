@@ -1,0 +1,8 @@
+mixin icon(nameSection,elem, mod)
+
+    - classMod = elem + '_' + mod
+    - nameClassMod = nameSection + "__" + classMod
+    - nameClass = nameSection + "__" + elem
+
+    svg(class=nameClass + ' ' + nameClassMod)
+        use(xlink:href="/img/svg/symbol/sprite.svg#" + mod)

@@ -1,5 +1,5 @@
 extends layout/template
-
+include layout/mixins
 block vars
 	- var pageTemplate = "index"; // page-specific var
 
@@ -14,4 +14,6 @@ block content
 	include layout/block/profile
 	include layout/block/resume
 	include layout/block/works
-	include layout/block/footer
+	include layout/block/eduction
+	include layout/block/contact
+

@@ -1,6 +1,9 @@
+block vars
+    - var pageTemplate = "works"; // page-specific var
+    - var pageHeaderText = "Works"; // page-specific var
+
 section.works.section-wrap
-    .works__header.header
-        h2.header__title Works
+    include header
     .works__container.container
         .works__filter.filter
             .filter__title Filter
@@ -42,19 +45,11 @@ section.works.section-wrap
                         span.preview__icon
                         span.preview__text Preview
                 li.preview__item.preview__item_gray.js-animate(data-item="2")
-                    //.preview__img
-                    //    img(src="../img/example.jpg" alt)
                     a(href="").preview__link
                         span.preview__icon
                         span.preview__text Preview
                 li.preview__item.preview__item_gray.js-animate(data-item="3")
-                    //.preview__img
-                    //    img(src="../img/example.jpg" alt)
                     a(href="").preview__link
                         span.preview__icon
                         span.preview__text Preview
-                //li.preview__item
-                //    .preview__img
-                //        img(src="../img/example.jpg" alt)
-                //    .preview__overlay
-                //        a(href="").preview__link
+    include footer

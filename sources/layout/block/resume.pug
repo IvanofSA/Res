@@ -1,7 +1,11 @@
-section.resume.hide.section-wrap
+block vars
+    - var pageTemplate = "resume"; // page-specific var
+    - var pageHeaderText = "My skills"; // page-specific var
 
-    .resume__header.header
-        h2.header__title My skills
+section.resume.section-wrap.hide
+    include header
+    //.resume__header.header
+    //    h2.header__title My skills
     .resume__container.container
         .resume__wrap
             .resume__diagram.resume__diagram_line.diagram-line
@@ -129,3 +133,4 @@ section.resume.hide.section-wrap
                             span 10 Cups of Coffee
                         .price__item
                             a(href="").price__btn.btn.btn_blue Submit
+    include footer
