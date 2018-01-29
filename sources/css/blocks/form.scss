@@ -2,6 +2,10 @@
 
   &__group {
     margin-bottom: 20px;
+
+    @include breakpoint($tablet) {
+      margin-bottom: 35px;
+    }
   }
 
   &__btn {
@@ -66,12 +70,16 @@
     @include pxToRem(font-size, 18px);
     color: $titleColor;
 
-    &_textaarea {
+    &_textarea {
       padding-top: 10px;
       min-height: 100px;
       resize: vertical;
       border: 1px solid $grayColor;
       border-radius: 5px;
+
+      @include breakpoint($tablet) {
+        min-height: 150px;
+      }
     }
   }
 

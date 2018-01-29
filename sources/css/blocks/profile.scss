@@ -8,6 +8,57 @@
     padding: 0 15px 0 15px;
   }
 
+  &__top {
+    @include breakpoint($tablet) {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+  }
+  &__bottom {
+    @include breakpoint($tablet) {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+  }
+  &__photo {
+    display: block;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    @include breakpoint($tablet) {
+      width: 30%;
+    }
+  }
+  .circle-img {
+    position: relative;
+    display: block;
+    border-radius: 50%;
+    @include size(200px);
+    margin:0 auto;
+    background: url('../img/1.jpg') no-repeat center;
+    background-size: cover;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -11px;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      border: 1px solid #b3b3b3;
+      width: calc(100% + 20px);
+      height: calc(100% + 20px);
+      border-radius: 50%;
+    }
+  }
+
   &__img {
     width: 100%;
     margin-bottom: 20px;
@@ -21,6 +72,9 @@
 
   &__text {
     margin-bottom: 30px;
+    @include breakpoint($tablet) {
+      width: 65%;
+    }
   }
   &__title {
     margin-bottom: $titleMb;
@@ -31,6 +85,13 @@
     position: relative;
     margin-bottom: 40px;
 
+
+    @include breakpoint($tablet) {
+      width: 50%;
+      margin-bottom: 0;
+      padding-left: 20px;
+    }
+
     &:before {
       content: '';
       display: block;
@@ -40,11 +101,25 @@
       left: 0;
       bottom: -10px;
       background: $hoverORange;
+
+      @include breakpoint($tablet) {
+        height: 100%;
+        width: 5px;
+        left: 0;
+        top: 0;
+        bottom: auto;
+      }
     }
   }
 
   &__item {
     margin-bottom: 10px;
+
+    @include breakpoint($tablet) {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
 
   }
 
@@ -61,4 +136,6 @@
     color: $grayColor;
     @include pxToRem(font-size, 14px);
   }
+
+
 }

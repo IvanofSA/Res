@@ -2,13 +2,23 @@
 
   &__wrap {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint($tablet) {
+      margin-bottom: 40px;
+    }
   }
 
   &__diagram {
     width: 100%;
     margin-bottom: 35px;
+
+    @include breakpoint($tablet) {
+      width: 45%;
+      margin-bottom: 0;
+    }
   }
 
   &__experience {
@@ -17,8 +27,20 @@
   &__title {
     text-align: left;
     margin-bottom: 35px;
+
+    @include breakpoint($tablet) {
+      margin-bottom: 20px;
+    }
   }
 
+}
+
+.experience {
+  &__list {
+    @include breakpoint($tablet) {
+      margin-bottom: 50px;
+    }
+  }
 }
 
 .diagram-line {
@@ -96,6 +118,10 @@
       color: $white;
       @include transform(translateY(-50%));
       @include pxToRem(font-size, 13px);
+
+      @include breakpoint($tablet) {
+        left: 5px;
+      }
     }
   }
 }
@@ -118,6 +144,11 @@
     flex-flow: wrap column;
     align-items: center;
     justify-content: center;
+
+    @include breakpoint($tablet) {
+      width: 33%;
+      max-width: 100px;
+    }
 
     &:before {
       content: '';
@@ -153,6 +184,10 @@
     font-weight: 400;
     @include pxToRem(font-size, 13px);
     color: $titleColor;
+
+    @include breakpoint($tablet) {
+      @include pxToRem(font-size, 12px);
+    }
   }
 
   &__procent {
@@ -160,13 +195,23 @@
     font-weight: 700;
     @include pxToRem(font-size, 22px);
     color: $titleColor;
+
+    @include breakpoint($tablet) {
+      @include pxToRem(font-size, 20px);
+    }
   }
 }
 
 .workplace {
-
   @include pxToRem(font-size, 14px);
   margin-bottom: 40px;
+
+  @include breakpoint($tablet) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   &:last-child {
     margin-bottom: 0;
@@ -176,9 +221,10 @@
     display: inline-block;
     position: relative;
     margin-bottom: 40px;
-
-
-
+    @include breakpoint($tablet) {
+      width: 30%;
+      margin-bottom: 0;
+    }
   }
 
   &__text {
@@ -189,9 +235,10 @@
     &:last-child {
       margin-bottom: 0;
     }
+
   }
 
-  &__text_accent{
+  &__text_accent {
     font-weight: 700;
     color: $hoverORange;
   }
@@ -201,6 +248,11 @@
     font-weight: 400;
     color: $textColor;
     line-height: 1.714;
+
+    @include breakpoint($tablet) {
+      width: 65%;
+      padding-left: 20px;
+    }
 
     &:after, &:before {
       content: '';
@@ -215,6 +267,13 @@
       left: 0;
       height: 2px;
       background: $arrowGreen;
+
+      @include breakpoint($tablet) {
+        width: 2px;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
     }
 
     &:after {
@@ -224,6 +283,15 @@
       background: transparent;
       border: 7px solid transparent;
       border-bottom: 7px solid $arrowGreen;
+
+      @include breakpoint($tablet) {
+        top: 50%;
+        @include transform(translateY(-50%));
+        left: 0px;
+        bottom: auto;
+        border: 7px solid transparent;
+        border-left: 7px solid $arrowGreen;
+      }
     }
   }
 }
@@ -236,15 +304,24 @@
     align-items: center;
     flex-flow: column wrap;
     justify-content: space-between;
+
+    @include breakpoint($tablet) {
+      flex-flow: row wrap;
+    }
   }
   &__item {
     margin-bottom: 25px;
 
     &:last-child {
       margin-bottom: 0;
+
+      @include breakpoint($tablet) {
+        margin-bottom: 25px;
+      }
     }
   }
 }
+
 .price {
   border-radius: 5px;
   border: 1px solid #cdcdcd;
@@ -254,9 +331,20 @@
   max-width: 320px;
   width: 100%;
 
+  @include breakpoint($tablet) {
+    max-width: 205px;
+  }
+
   &__wrap {
     background: $footerBg;
     padding: 15px 0;
+
+    @include breakpoint($tablet) {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__title {
@@ -267,7 +355,6 @@
     text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
     //line-height: 1.85;
   }
-
 
   &__title_num {
     font-weight: 400;
@@ -290,15 +377,14 @@
     }
   }
 
-
-
 }
 
 #chart-area {
-  width: 100%!important;
-  min-height: 300px!important;
+  width: 100% !important;
+  height: 250px !important;
   margin-bottom: 30px;
 }
+
 @keyframes animation-lightspeed-in {
   0% {
     opacity: 0;

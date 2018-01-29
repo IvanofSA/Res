@@ -1,54 +1,39 @@
-section.profile.section-wrap.hide
-    .profile__img
-        img(src="/img/1.jpg" alt="Alt")
-    .profile__container.container
-        .profile__base
-            .profile__top
-                a(href="").profile__photo
-                    svg.svg(version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="260")
-                        style(type='text/css').
-                        g#container
-                            circle.st0(cx='50%', cy='130', r='125' stroke="black" stroke-width="1" fill="none")
-                            circle.st0(fill='url(#img1)', cx='50%', cy='130', r='115')
+section.profile.section-wrap
+  .profile__img
+    img(src="/img/1.jpg" alt="Alt")
+  .profile__container.container
 
-                            defs
-                                filter#myFilter3
-                                    fecolormatrix(in="SourceGraphic" type="matrix"
-                                    values="0.788 -0.262  0.474  0   0 0.1    " +
-                                    "1.032 -0.132 -0.1 0 -1     " +
-                                    "2.1    0.912 -2.8 0 " +
-                                    "0      0      0      1   0")
-                                pattern#img1(patternUnits='userSpaceOnUse', x="0" y="0" width='100%', height='100%')
-                                    image( width="400" height="100%" xlink:href="/img/1.jpg", filter='url(#myFilter3)')
+    .profile__top
+      a(href="").profile__photo
+        .circle-img
+
+      .profile__text
+        h2.profile__title.main-title Who am I?
+        p.profile__desc.main-desc Your talent me lius quod i legu saepius. Claritas est etiam processus dynamicus, qui sequr mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Browse my portoflio and fodem modo typi, qui nunc nobis videntur parum clar.
 
 
-                .profile__text
-                    .profile__title.main-title Who am I?
-                    .profile__desc.main-desc Your talent me lius quod i legu saepius. Claritas est etiam processus dynamicus, qui sequr mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Browse my portoflio and fodem modo typi, qui nunc nobis videntur parum clar.
+    .profile__bottom
+      .profile__list
+        .profile__item
+          .profile__prop Name:
+          .profile__value Tommy Smith
+        .profile__item
+          .profile__prop Date of Birdth:
+          .profile__value 12 April, 1999
+        .profile__item
+          .profile__prop Address:
+          .profile__value 8 Long Istland, USA
 
+      .profile__list
+        .profile__item
+          .profile__prop Telephone:
+          .profile__value +52656 1515
 
-            .profile__bottom
-                .profile__list
-                    .profile__item
-                        .profile__prop Name:
-                        .profile__value Tommy Smith
-                    .profile__item
-                        .profile__prop Date of Birdth:
-                        .profile__value 12 April, 1999
-                    .profile__item
-                        .profile__prop Address:
-                        .profile__value 8 Long Istland, USA
+        .profile__item
+          .profile__prop Web:
+          .profile__value www.coralixthemes.com
+        .profile__item
+          .profile__prop Email:
+          .profile__value coralixthemes@company.com
 
-                .profile__list
-                    .profile__item
-                        .profile__prop Telephone:
-                        .profile__value +52656 1515
-
-                    .profile__item
-                        .profile__prop Web:
-                        .profile__value www.coralixthemes.com
-                    .profile__item
-                        .profile__prop Email:
-                        .profile__value coralixthemes@company.com
-
-    include footer
+  include footer

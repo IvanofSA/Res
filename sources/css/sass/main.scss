@@ -15,8 +15,9 @@
 }
 
 .main-title {
+  display: block;
   text-align: left;
-  color: $textColor;
+  color: $titleColor;
   font-family: 'helveticaneue', Arial, Helvetica, sans-serif;
   font-weight: 700;
   @include pxToRem(font-size, 27px);
@@ -44,6 +45,11 @@
 
 .container {
   padding: 20px 15px;
+
+
+  @include breakpoint($tablet) {
+    padding: 40px 28px;
+  }
 }
 
 .btn {

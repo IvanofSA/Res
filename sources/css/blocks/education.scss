@@ -34,12 +34,13 @@
     @include pxToRem(font-size, 20px);
     color: $titleColor;
     font-weight: 700;
+    margin-right: 7px;
   }
 
   &__date {
-    color: $textColor;
+    color: $grayColor;
     @include pxToRem(font-size, 16px);
-    font-weight: 500;
+    font-weight: 700;
   }
 
   &__text {

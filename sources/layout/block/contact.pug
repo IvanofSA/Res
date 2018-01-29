@@ -2,79 +2,80 @@ block vars
     - var pageTemplate = "contact"; // page-specific var
     - var pageHeaderText = "Contact Me"; // page-specific var
 
-section.contact.section-wrap.hide
+section.contact.section-wrap
     include header
     .contact__container.container
-        .contact__left
-            form.contact__form.form.form_feedback(action="" method="GET" autocomplete="off" id="form-feedback")
-                .form__group
-                    label.form__label Name(required)
-                    .form__inputbox
-                        .form__wrap
-                            +icon('form', 'icon', 'man')
-                        input.form__input(name='name' type="text" data-validation='' data-f='')
-                    .form__msg das
-                .form__group
-                    label.form__label Subject(required)
-                    .form__inputbox.form__inputbox_disabled
-                        .form__wrap
-                            +icon('form', 'icon', 'message')
-                        input.form__input(name='title' type="text" data-validation='' data-f='' disabled)
-                    .form__msg
-                .form__group
-                    label.form__label Email(required)
-                    .form__inputbox
-                        .form__wrap
-                            +icon('form', 'icon', 'email')
-                        input.form__input(name='email' type="email"  data-validation='' data-f='')
-                    .form__msg
-                .form__group
-                    label.form__label Message
-                    .form__inputbox_textaarea
-                        textarea.form__input.form__input_textaarea(name='text' data-validation='' data-f='')
-                    .form__msg
+        .contact__wrap
+            .contact__left
+                form.contact__form.form.form_feedback(action="" method="GET" autocomplete="off" id="form-feedback")
+                    .form__group
+                        label.form__label Name(required)
+                        .form__inputbox
+                            .form__wrap
+                                +icon('form', 'icon', 'man')
+                            input.form__input(name='name' type="text" data-validation='' data-f='')
+                        .form__msg
+                    .form__group
+                        label.form__label Subject(required)
+                        .form__inputbox.form__inputbox_disabled
+                            .form__wrap
+                                +icon('form', 'icon', 'message')
+                            input.form__input(name='title' type="text" data-validation='' data-f='' disabled)
+                        .form__msg
+                    .form__group
+                        label.form__label Email(required)
+                        .form__inputbox
+                            .form__wrap
+                                +icon('form', 'icon', 'email')
+                            input.form__input(name='email' type="email"  data-validation='' data-f='')
+                        .form__msg
+                    .form__group
+                        label.form__label Message
+                        .form__inputbox_textarea
+                            textarea.form__input.form__input_textarea(name='text' data-validation='' data-f='')
+                        .form__msg
 
-                button.form__btn.btn.btn_red.js-form-feedback Send
-        .contact__right
-            .contact__title.main-title My office
-            .contact__map.map#map
-            .contact__title.main-title Contact Information
-            .contact__text Please don't hesitate to contact me for more information about my work. </br> I am available Mon - Friday from 9am to 7pm
-            ul.contact__list
-                li.contact__item
-                    span.contact__text Name of the street 123/4
-                li.contact__item
-                    span.contact__text Name of the City, country
+                    button.form__btn.btn.btn_red.js-form-feedback Send
+            .contact__right
+                .contact__title.main-title My office
+                .contact__map.map#map
+                .contact__title.main-title Contact Information
+                .contact__text Please don't hesitate to contact me for more information about my work. </br> I am available Mon - Friday from 9am to 7pm
+                ul.contact__list
+                    li.contact__item
+                        span.contact__text Name of the street 123/4
+                    li.contact__item
+                        span.contact__text Name of the City, country
 
-            ul.contact__list
-                li.contact__item
-                    span.contact__text Email: info@company.com
-                li.contact__item
-                    span.contact__text Phone: 777.777.7777
+                ul.contact__list
+                    li.contact__item
+                        span.contact__text Email: info@company.com
+                    li.contact__item
+                        span.contact__text Phone: 777.777.7777
 
-            ul.contact__soc.social
-                li.social__item
-                    +icon('social', 'icon', 'tw')
-                    .social__tooltip twitter
-                li.social__item
-                    +icon('social', 'icon', 'yt')
-                    .social__tooltip youtube
+                ul.contact__soc.social
+                    li.social__item
+                        +icon('social', 'icon', 'tw')
+                        .social__tooltip twitter
+                    li.social__item
+                        +icon('social', 'icon', 'yt')
+                        .social__tooltip youtube
 
-                li.social__item
-                    +icon('social', 'icon', 'vk')
-                    .social__tooltip vkontakte
+                    li.social__item
+                        +icon('social', 'icon', 'vk')
+                        .social__tooltip vkontakte
 
-                li.social__item
-                    +icon('social', 'icon', 'fb')
-                    .social__tooltip facebook
+                    li.social__item
+                        +icon('social', 'icon', 'fb')
+                        .social__tooltip facebook
 
-                li.social__item
-                    +icon('social', 'icon', 'gp')
-                    .social__tooltip google plus
+                    li.social__item
+                        +icon('social', 'icon', 'gp')
+                        .social__tooltip google plus
 
-                li.social__item
-                    +icon('social', 'icon', 'im')
-                    .social__tooltip instagram
+                    li.social__item
+                        +icon('social', 'icon', 'im')
+                        .social__tooltip instagram
 
 
     include footer
